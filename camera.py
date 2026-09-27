@@ -4,12 +4,21 @@ import math
 
 class Camera:
     def __init__(self, position):
-        self.position = np.array(position)
+        self.position = np.array(position, dtype=float)
         # camera basis
         self.forward = [0, 1, 0]
         self.up = [0, 0, 1]
         self.right = [1, 0, 0]
-        # camera orientation
+
+        # mouse location
+        self.mousex = 0
+        self.mousey = 0
+
+    def handle_event(self, event):
+        if event == pygame.MOUSEMOTION:
+            print(pygame.mouse.get_pos())
+        print(pygame.mouse.get_pos())
+
 
 
     def rotate_z(self, z_angle):
